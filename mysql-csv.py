@@ -1,21 +1,23 @@
-import pymysql.cursors
 import pandas as pd
+from sqlalchemy import create_engine
 
-SERVER_URL = "localhost"
-DB = "usms"
-USER_NAME = "root"
-PASSWORD = "root"
-CSV_FIlE = "./hotel_bookings.csv"
+CSV_FILE = './hotel_bookings.csv'
+DATABASE_TYPE = 'mysql'
+USERNAME = 'root'
+PASSWORD = 'root'
+DATABASE = 'demo'
+TABLE = 'demo_hotel'
+HOST = 'localhost'
 
-connection = pymysql.connect(host=SERVER_URL,
-                             user=USER_NAME,
-                             passwd=PASSWORD,
-                             db=DB,
-                             charset='utf8mb4',
-                             cursorclass=pymysql.cursors.DictCursor,
-                             autocommit=True)
+DB_URL = DATABASE_TYPE + "+pymysql://" + USERNAME + ":" + PASSWORD + "@" + HOST + "/" + DATABASE
 
-csv = pd.read_csv(CSV_FIlE)
-print(csv.info())
-print(dict(csv.dtypes))
+df = pd.read_csv(CSV_FILE)
+engine = create_engine(DB_URL, pool_recycle=3600)
 
+with engine.connect() as conn, conn.begin():
+    try:
+        df.to_sql(TABLE, conn, if_exists='replace', index=False)
+    except Exception as err:
+        print(err.__cause__)
+    finally:
+        print("CSV successfully imported")
