@@ -7,13 +7,18 @@ It is created solely for the purpose to help data analyst for the data manipulat
 which in turns help analyst to get the required information before hand. This information will help analyst to expect what type of information 
 should a data frame hold for data visualization.
 
-## Prerequisites 
-* python 
-* pip 
-* pandas
-* numpy 
-* SQLAlchemy
-* setup-tools
+## Setup 
+### Linux
+* ``sudo apt-get install python3.7``
+
+* ``sudo apt install python-pip``
+
+* ``sudo apt-get install python-setuptools``
+
+* ``pip install pandas``
+
+* ``pip install SQLAlchemy``
+
 
 ## Help
 View the usage of command line parameters.
