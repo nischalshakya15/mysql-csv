@@ -7,13 +7,13 @@ It is created solely for the purpose to help data analyst for the data manipulat
 which in turns help analyst to get the required information before hand. This information will help analyst to expect what type of information 
 should a data frame hold for data visualization.
 
-## Setup 
+## Install required python dependencies 
 ### Linux
-* ``sudo apt-get install python3.7``
+* ``sudo apt-get install -y python3.7``
 
-* ``sudo apt install python-pip``
+* ``sudo apt install -y python3-pip``
 
-* ``sudo apt-get install python-setuptools``
+* ``sudo apt-get install -y python-setuptools``
 
 * ``pip install pandas``
 
