@@ -5,7 +5,7 @@ and specify a data type.
 ## Purpose
 It is created solely for the purpose to help data analyst for the data manipulation and getting the result using an sql query 
 which in turns help analyst to get the required information before hand. This information will help analyst to expect what type of information 
-should a data frame hold for data visualization.
+should a data frame hold for data visualization. Since, writing a query to get the data is lot more easier than going writing code to get it.   
 
 ## Install required python dependencies 
 ### Linux
